@@ -46,7 +46,7 @@
   		}
   	</style>
   	<script id='query'>
-var bad_events = ['$campaign_delivery', '$campaign_marked_spam', '$campaign_bounced', '$campaign_open', '$experiment_started'];
+var bad_events = ['$campaign_delivery', '$campaign_marked_spam', '$campaign_bounced', '$campaign_open', '$experiment_started', 'Reminder XDevice creation'];
 
 function createState(state, items) {
     state = state || {sequence: []};
@@ -242,7 +242,7 @@ function main() {
 			    'end_event': finish_event.MPEventSelect('value'),
 			    'property': property.MPPropertySelect('value'),
 			    'people_prop' : peopleProperty == 0? null: peopleProperty.MPSelect('value'),
-			    'bad_events': ['$campaign_delivery', '$campaign_marked_spam', '$campaign_bounced', '$campaign_open', '$experiment_started']
+			    'bad_events': ['$campaign_delivery', '$campaign_marked_spam', '$campaign_bounced', '$campaign_open', '$experiment_started', 'Reminder XDevice creation']
 			};
 			MP.api.custom_query(script, params).done(function(results) {
 				var sequenceMapper = function(sequence) {
